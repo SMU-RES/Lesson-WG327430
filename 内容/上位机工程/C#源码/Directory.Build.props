@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- SDK 读取项目之前设置暂存路径，普通构建也不会在交付源码里生成 bin/obj。 -->
+    <BuildRoot Condition="'$(BuildRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..\build\汽车上位机\'))</BuildRoot>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)' == ''">$(BuildRoot)obj\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath Condition="'$(MSBuildProjectExtensionsPath)' == ''">$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+    <BaseOutputPath Condition="'$(BaseOutputPath)' == ''">$(BuildRoot)bin\</BaseOutputPath>
+  </PropertyGroup>
+</Project>
